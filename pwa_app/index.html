@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aplikasi PWA Contoh</title>
+
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0b3d91" />
+
+  <!-- iOS support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="PWAContoh">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+  <link rel="icon" href="/icons/icon-192.png">
+</head>
+<body>
+  <h1>Halo 👋</h1>
+  <p>Ini contoh aplikasi PWA sederhana.</p>
+  <p>Coba buka di HP, lalu pilih <b>Add to Home screen</b>.</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service Worker terdaftar'))
+        .catch(err => console.warn('Service Worker gagal:', err));
+    }
+  </script>
+</body>
+</html>
